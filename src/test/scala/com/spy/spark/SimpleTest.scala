@@ -1,12 +1,9 @@
 package com.spy.spark
 
-import com.holdenkarau.spark.testing.SharedSparkContext
-import org.scalatest.FunSuite
-
 /**
   * Created by spy on 2016-12-01.
   */
-class SimpleTest extends FunSuite with SharedSparkContext {
+class SimpleTest extends BaseTest {
 
   test("test initializing spark context") {
     val list = List(1, 2, 3, 4)
@@ -16,14 +13,21 @@ class SimpleTest extends FunSuite with SharedSparkContext {
     println(rdd.count)
   }
 
+
+  test("makeRDD Test") {
+    val rdd = sc.makeRDD(Seq("A", "B", "C"), 2)
+    rdd.zipWithIndex().collect().foreach(println)
+  }
+
+
   override def beforeAll(): Unit = {
     super.beforeAll()
-    println("before All");
+    println("----------before All----------");
   }
 
   override def afterAll(): Unit = {
     super.afterAll()
-    println("end All")
+    println("----------end All----------")
   }
 
 }
