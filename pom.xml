@@ -15,6 +15,7 @@
         <scala.lang.version>2.10.6</scala.lang.version>
         <scala.maven.version>2.15.2</scala.maven.version>
         <hadoop.version>2.6.0</hadoop.version>
+        <fastjson.version>1.2.21</fastjson.version>
     </properties>
 
     <dependencies>
@@ -84,6 +85,12 @@
             <artifactId>spark-testing-base_2.10</artifactId>
             <version>${spark.version}_0.3.3</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
         </dependency>
 
     </dependencies>
